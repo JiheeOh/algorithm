@@ -26,6 +26,7 @@ public class segmentTree_11505 {
             arr[i] = Long.parseLong(br.readLine());
         }
 
+        // 곱의 연산이기 때문에 long 타입으로 지정 필요 1,000,000*1,000,000 = 10^9
         tree = new long[n*4];
         initTree(1,1,n);
 
@@ -64,6 +65,9 @@ public class segmentTree_11505 {
         long leftValue = initTree(node*2,start,mid);
         long rightValue = initTree(node*2+1,mid+1,end);
 
+        // 모듈로 연산
+        // (A mod C * B mod C) mod C = (A * B) mod C
+        // 곱을 누적하면 값이 너무 커지니까 tree에 저장할때부터 나머지 값으로 세팅
         return tree[node] = (leftValue*rightValue)%MOD;
     }
 
