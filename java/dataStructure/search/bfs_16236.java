@@ -9,7 +9,6 @@ import static java.util.stream.Collectors.toList;
  */
 public class bfs_16236 {
 
-
     static int[][] arr;
     static int sharkX, sharkY, N;
     static int sharkSize = 2;
