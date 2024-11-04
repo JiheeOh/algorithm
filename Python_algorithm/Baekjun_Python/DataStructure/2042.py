@@ -28,7 +28,7 @@ def findTree(b, c, x, left, right):
     if b > right or c < left :
         return 0
 
-    elif b <= left and c >= right :
+    if b <= left and c >= right :
         return tree[x]
 
     mid = (left+ right) //2
