@@ -1,4 +1,4 @@
-package architecture.layer.application;
+package architecture.layer.domain;
 
 import architecture.layer.domain.UserDto;
 import architecture.layer.infrastructure.UserEntity;

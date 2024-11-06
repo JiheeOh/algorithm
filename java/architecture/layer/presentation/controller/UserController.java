@@ -1,6 +1,6 @@
 package architecture.layer.presentation.controller;
 
-import architecture.layer.application.UserService;
+import architecture.layer.domain.UserService;
 import architecture.layer.domain.UserDto;
 import architecture.layer.presentation.dto.RequestDto;
 import architecture.layer.presentation.dto.ResponseDto;
