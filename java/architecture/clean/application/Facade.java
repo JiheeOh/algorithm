@@ -1,4 +1,4 @@
 package architecture.clean.application;
 
-public class OrderUsecase {
+public class Facade {
 }
