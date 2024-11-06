@@ -1,4 +1,4 @@
 package architecture.layer.domain;
 
-public class OrderEntity {
+public class UserDto {
 }

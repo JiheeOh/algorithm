@@ -1,4 +1,4 @@
 package architecture.layer.infrastructure;
 
-public class OrderRepository {
+public class UserEntity {
 }

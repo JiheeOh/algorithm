@@ -1,5 +1,7 @@
 package architecture.layer.application;
 
+import architecture.layer.domain.UserDto;
+import architecture.layer.infrastructure.UserEntity;
 import architecture.layer.infrastructure.UserRepositoryImpl;
 
 public class UserService {
@@ -8,7 +10,9 @@ public class UserService {
     public UserService(UserRepositoryImpl userRepository){
         this.userRepository = userRepository;
     }
-    public void findUserInfo(String userId) {
-      return userRepository.findUserInfo(userId);
+    public UserDto findUserInfo(String userId) {
+        UserEntity result = userRepository.findUserInfo(userId);
+//        UserDto result = new UserDto(result);
+      return new UserDto();
     }
 }
