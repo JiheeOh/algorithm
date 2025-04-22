@@ -13,7 +13,7 @@ public class Main {
 
         int result = 0;
         for(int i = 0 ; i< N.length();i++){
-            result += Integer.parseInt(N.split("")[i]) * Math.pow(8,N.length()-1-i);
+            result += Integer.parseInt(N.split("")[i]) * Math.pow(A,N.length()-1-i);
         }
 
         while(result >=B){
