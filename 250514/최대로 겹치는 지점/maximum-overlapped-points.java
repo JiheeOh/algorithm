@@ -3,7 +3,7 @@ import java.io.*;
 
 public class Main {
 
-    public static int[] arr = new int[100];
+    public static int[] arr = new int[101];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
