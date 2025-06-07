@@ -25,13 +25,12 @@ public class Main {
             arr[i] = input;
 
 
-
             if (i > 0 && input > arr[i - 1] && input > t) {
                 plusCount++;
             } else if (i > 0 && input < arr[i - 1] && input > t) {
                 minusCount++;
-            } else {
-                plusCount = 0;
+            } else if (i != 0) {
+                plusCount = 1;
                 minusCount = 1;
             }
             plusTemp = Math.max(plusTemp, plusCount);
