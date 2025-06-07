@@ -27,6 +27,10 @@ public class Main {
             }
 
         }
+        // 1개만 들어왔을 경우 
+        if( countList.isEmpty()){
+            countList.add(1);
+        }
         System.out.println(Collections.max(countList));
 
     }
