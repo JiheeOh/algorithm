@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.io.*;
 
@@ -52,13 +53,17 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length; j++) {
                 if (arr[i][j] == 1) {
-                    x2 = i+1;
-                    y2 = j+1;
+                    if( x2 < i){
+                        x2 = i;
+                    }
+                   if(y2 < j){
+                       y2 = j;
+                   }
                 }
             }
         }
 
-        System.out.println( (x2-x1)*(y2-y1));
+        System.out.println( (x2-x1+1)*(y2-y1+1));
 
     }
 }
