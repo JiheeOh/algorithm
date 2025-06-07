@@ -1,7 +1,5 @@
+
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -19,19 +17,19 @@ public class Main {
 
         int temp = 0;
         int count = 0;
+        int[] sign = new int[n];
+
         st = new StringTokenizer(br.readLine());
         for ( int i = 0 ; i < n ; i ++){
             int input = Integer.parseInt(st.nextToken());
             arr[i] = input ;
 
-            if( i > 1 && input > arr[i-1] && input > t ){
-                count ++ ;
-            }else if(input > t){
-                count = 1;
+            if( i > 0 && input > arr[i-1] && input > t){
+                count ++;
             }else {
                 count =0;
             }
-           temp = Math.max(temp,count);
+            temp = Math.max(temp,count);
         }
         System.out.println(temp);
 
