@@ -17,7 +17,7 @@ public class Main {
         for ( int i = 0 ; i < n ; i ++){
             int input = Integer.parseInt(br.readLine());
 
-            if( i ==0 ||  input == arr[i-1]){
+            if( i ==0 || input == arr[i-1]){
                 count +=1 ;
                 arr[i] = input ;
             }else {
@@ -25,12 +25,11 @@ public class Main {
                 arr[i] = input;
                 count = 1;
             }
+            if(i == n-1) {
+                countList.add(count);
+            }
+        }
 
-        }
-        // 1개만 들어왔을 경우 
-        if( countList.isEmpty()){
-            countList.add(1);
-        }
         System.out.println(Collections.max(countList));
 
     }
