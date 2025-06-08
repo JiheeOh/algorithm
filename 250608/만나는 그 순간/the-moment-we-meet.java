@@ -11,7 +11,7 @@ public class Main {
 
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int answer = 0;
+        int answer = -1;
         // A 움직임 기록
         int status = 1;
         for(int i = 0 ; i< n; i ++){
