@@ -8,9 +8,8 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Main {
-
-    private static int A[] = new int[1001];
-    private static int B[] = new int[1001];
+    private static int A[] = new int[100001];
+    private static int B[] = new int[100001];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
