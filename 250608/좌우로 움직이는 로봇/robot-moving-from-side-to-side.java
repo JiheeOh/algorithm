@@ -1,5 +1,6 @@
 
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -74,9 +75,9 @@ public class Main {
         }
         // 나머지 값 채워주기
         int maxIndex = 0;
-        if ( secondA>secondB){
+        if ( secondA > secondB){
             maxIndex = secondA;
-            for( int j = B.length-1 ; j < A.length; j ++){
+            for( int j = secondB; j < maxIndex; j ++){
                 B[j] =B[j-1];
             }
         }else{
@@ -89,10 +90,10 @@ public class Main {
         int result = 0 ;
         // 겹치는 구간 찾기
         for ( int i = 1 ; i< maxIndex ; i ++){
-            if(A[i] == B[i] && A[i-1] !=B[i-1]){
+            if(A[i] == B[i] && A[i-1] != B[i-1] ){
                 result ++;
             }
         }
-        System.out.println(result);
+
     }
 }
