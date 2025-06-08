@@ -12,8 +12,10 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
         int answer = -1;
+
         // A 움직임 기록
         int status = 1;
+
         for(int i = 0 ; i< n; i ++){
             st = new StringTokenizer(br.readLine());
             String direction = st.nextToken();
@@ -50,10 +52,6 @@ public class Main {
                 case "R" :
                     while(move >0){
                         B[status]= B[status-1] +1;
-                        if (A[status] == B[status]){
-                            answer = status;
-                            break;
-                        }
                         status++;
                         move--;
 
@@ -63,10 +61,6 @@ public class Main {
                 case "L":
                     while(move >0){
                         B[status]= B[status-1] -1;
-                        if (A[status] == B[status]){
-                            answer = status;
-                            break;
-                        }
                         status++;
                         move--;
 
@@ -75,6 +69,12 @@ public class Main {
             }
 
         }
+       for(int i = 1 ; i < A.length; i ++){
+           if (A[i] == B[i]){
+               answer = i;
+               break;
+           }
+       }
         System.out.println(answer);
     }
 }
