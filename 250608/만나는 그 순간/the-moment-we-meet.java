@@ -52,8 +52,13 @@ public class Main {
                 case "R" :
                     while(move >0){
                         B[status]= B[status-1] +1;
+                        if(A[status] == B[status]){
+                            answer = status;
+                            break;
+                        }
                         status++;
                         move--;
+
 
                     }
                     break;
@@ -61,20 +66,22 @@ public class Main {
                 case "L":
                     while(move >0){
                         B[status]= B[status-1] -1;
+                        if(A[status] == B[status]){
+                            answer = status;
+                            break;
+                        }
                         status++;
                         move--;
 
                     }
                     break;
             }
+            if( answer != -1 ){
+                break;
+            }
 
         }
-       for(int i = 1 ; i < A.length; i ++){
-           if (A[i] == B[i]){
-               answer = i;
-               break;
-           }
-       }
+
         System.out.println(answer);
     }
 }
