@@ -21,8 +21,8 @@ public class Main {
         int carrier = Integer.parseInt(st.nextToken());
         int handshakeCnt = Integer.parseInt(st.nextToken());
 
-        people = new int[n+1];
-        spread = new int[n+1];
+        people = new int[n + 1];
+        spread = new int[n + 1];
 
         // 최초 감염자와 감염 가능 횟수 등록
         people[carrier] = 1;
@@ -47,15 +47,20 @@ public class Main {
 
                 if (people[person1] == 1 && spread[person1] > 0) {
                     if (people[person2] != 1) { // 감염자가 아니였을 때 감염 시키고 옮기는 횟수 증가
+                        people[person2] = 1;
                         spread[person2] = 2;
+                    }else{ // 너도 감염자였네
+                        spread[person2] --;
                     }
-                    people[person2] = 1;
                     spread[person1]--;
+
                 } else if (people[person2] == 1 && spread[person2] > 0) {
                     if (people[person1] != 1) { // 감염자가 아니였을 때 감염 시키고 옮기는 횟수 증가
+                        people[person1] = 1;
                         spread[person1] = 2;
+                    }else{ // 너도 감염자였네
+                        spread[person1] --;
                     }
-                    people[person1] = 1;
                     spread[person2]--;
 
 
@@ -63,7 +68,7 @@ public class Main {
             }
         }
 
-        for (int p = 1 ; p< people.length; p ++){
+        for (int p = 1; p < people.length; p++) {
             System.out.print(people[p]);
         }
     }
