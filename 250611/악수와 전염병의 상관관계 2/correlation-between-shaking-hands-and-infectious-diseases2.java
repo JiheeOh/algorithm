@@ -48,17 +48,22 @@ public class Main {
                 if (people[person1] == 1 && spread[person1] > 0) {
                     if (people[person2] != 1) { // 감염자가 아니였을 때 감염 시키고 옮기는 횟수 증가
                         people[person2] = 1;
-                        spread[person2] = 2;
+                        spread[person2] = spreadCnt;
+                    }else{ // 너도 감염자였네
+                        spread[person2] --;
                     }
                     spread[person1]--;
 
-                } 
-                if (people[person2] == 1 && spread[person2] > 0) {
+                } else if (people[person2] == 1 && spread[person2] > 0) {
                     if (people[person1] != 1) { // 감염자가 아니였을 때 감염 시키고 옮기는 횟수 증가
                         people[person1] = 1;
-                        spread[person1] = 2;
+                        spread[person1] = spreadCnt;
+                    }else{ // 너도 감염자였네
+                        spread[person1] --;
                     }
                     spread[person2]--;
+
+
                 }
             }
         }
