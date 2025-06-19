@@ -1,6 +1,3 @@
-
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -33,10 +30,10 @@ public class Main {
             case "R":
                 dirNum = 0;
                 break;
-            case "D":
+            case "U":
                 dirNum = 1;
                 break;
-            case "U":
+            case "D":
                 dirNum = 2;
                 break;
             case "L":
