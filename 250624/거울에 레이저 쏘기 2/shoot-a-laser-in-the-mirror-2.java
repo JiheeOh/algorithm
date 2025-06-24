@@ -1,6 +1,4 @@
 
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,7 +7,7 @@ import java.util.StringTokenizer;
 public class Main {
 
     private static int[] xR = {0, 0, -1, 1}; // 북,남,서,동
-    private static int[] yR = {-1, 1, 0, 0};
+    private static int[] yR = {1, -1, 0, 0};
 
     private static int[] xL = {0, 0, 1, -1}; // 북,남,동,서
     private static int[] yL = {-1, 1, 0, 0};
@@ -89,7 +87,7 @@ public class Main {
                 case "W" :
                     dirNum = 3;
                     break;
-            };
+            }
 
         }
         return dirNum;
