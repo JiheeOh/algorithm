@@ -1,4 +1,6 @@
 
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,7 +34,7 @@ public class Main {
             int expectedRow = row + dy[dirNum%4];
             int expectedColumn = column + dx[dirNum%4];
             if(isInArr(expectedRow,expectedColumn) && arr[expectedRow][expectedColumn] == 0){
-                if(ascii >90){
+                if(ascii >=90){
                     ascii = 64;
                 }
                 ascii++;
@@ -56,5 +58,10 @@ public class Main {
     public static boolean isInArr(int row,int column){
         return 0<= row && row<n && 0<=column && column<m;
     }
+
+
+
+
+
 
 }
