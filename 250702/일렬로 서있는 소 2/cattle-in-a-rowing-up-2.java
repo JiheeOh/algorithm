@@ -13,7 +13,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
         List<Integer> input = new ArrayList<>();
-        for(int i = 0 ; i< 5; i ++){
+        for(int i = 0 ; i< n; i ++){
             input.add(Integer.parseInt(st.nextToken()));
         }
 
