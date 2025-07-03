@@ -1,4 +1,5 @@
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,41 +24,26 @@ public class Main {
             yList.add(Integer.parseInt(st.nextToken()));
         }
 
-        int maxIndex = getMaxIndex();
-
-
-        xList.remove(maxIndex);
-        yList.remove(maxIndex);
-
-        int distance = 0 ;
-        for (int i = 0; i < xList.size() - 1; i++) {
-            distance += Math.abs(xList.get(i) - xList.get(i + 1)) + Math.abs(yList.get(i) - yList.get(i + 1));
-
-        }
-
-        System.out.println(distance);
-
-    }
-
-    private static int getMaxIndex() {
-        int sum = 0;
-        int max = Integer.MIN_VALUE;
-        int maxIndex = -1;
-        for (int i = 0; i < xList.size() - 1; i++) {
-            int distance = Math.abs(xList.get(i) - xList.get(i + 1)) + Math.abs(yList.get(i) - yList.get(i + 1));
-            arr.add(distance);
-
-            if(distance > max){
-                max = distance;
-                if( i+1 == xList.size()-1){
-                    maxIndex = i+1;
-                }else {
-                    maxIndex = i;
+        int minDistance = Integer.MAX_VALUE;
+        int result = 0;
+        for (int i = 1; i < n - 1; i++) {
+            int distance = 0;
+            int prevIdx = 0;
+            for (int j = 1; j < n; j++) {
+                if(j == i){
+                    continue;
                 }
-
+                distance += Math.abs(xList.get(prevIdx) - xList.get(j )) + Math.abs(yList.get(prevIdx) - yList.get(j ));
+                prevIdx = j;
+            }
+            if (minDistance > distance) {
+                minDistance = distance;
             }
         }
-        return maxIndex;
+
+
+        System.out.println(minDistance);
+
     }
 
 
