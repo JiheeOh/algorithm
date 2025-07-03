@@ -49,7 +49,12 @@ public class Main {
 
             if(distance > max){
                 max = distance;
-                maxIndex = i+1;
+                if( i+1 == xList.size()-1){
+                    maxIndex = i+1;
+                }else {
+                    maxIndex = i;
+                }
+
             }
         }
         return maxIndex;
