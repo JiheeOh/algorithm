@@ -25,7 +25,7 @@ public class Main {
             }
         }
         if(!isChanged){
-            arr[arr.length-1]=  String.valueOf(1);
+            arr[arr.length-1]=  String.valueOf(0);
         }
         int result=0;
         for ( int i =0; i <arr.length;i++){
