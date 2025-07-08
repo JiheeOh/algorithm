@@ -60,6 +60,7 @@ public class Main {
             }
         }
         if (!win) {
+            // 오른쪽 대각선
             for (int i = 0; i < n - 5; i++) {
                 if (arr[i][i] != 0 && arr[i][i] == arr[i + 1][i + 1] && arr[i][i] == arr[i + 2][i + 2]
                         && arr[i][i] == arr[i + 3][i + 3] && arr[i][i] == arr[i + 4][i + 4]) {
@@ -69,6 +70,20 @@ public class Main {
                     column = i+3;
                     break;
                 }
+            }
+            //왼쪽 대각선
+            for (int i = n-1; i > 3; i--) {
+                for(int j = 0; j<n-5;j++){
+                    if (arr[i][j] != 0 && arr[i][j] == arr[i -1][j + 1] && arr[i][j] == arr[i - 2][j +2]
+                            && arr[i][j] == arr[i - 3][j + 3] && arr[i][j] == arr[i - 4][j + 4]) {
+                        win = true;
+                        result = arr[i][j];
+                        row = i-1;
+                        column = j+3;
+                        break;
+                    }
+                }
+
             }
         }
         System.out.println(result);
