@@ -45,8 +45,8 @@ public class Main {
                     break;
                 }
                 // 세로 확인
-                if (arr[i][j] != 0 && arr[j][i] == arr[j + 1][i] && arr[i][j] == arr[j + 2][i]
-                        && arr[i][j] == arr[j + 3][i] && arr[i][j] == arr[j + 4][i]) {
+                if (arr[j][i] != 0 && arr[j][i] == arr[j + 1][i] && arr[j][i] == arr[j + 2][i]
+                        && arr[j][i] == arr[j + 3][i] && arr[j][i] == arr[j + 4][i]) {
                     win = true;
                     result = arr[j][i];
                     row = j+3;
