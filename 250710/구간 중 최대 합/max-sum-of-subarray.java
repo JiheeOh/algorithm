@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -23,7 +24,10 @@ public class Main {
         // 2개씩 빼서 계산
         int result = Integer.MIN_VALUE;
         for (int i = 0; i < n -k+ 1; i++) {
-            int sum = arr[i]+arr[i+1]+arr[i+2];
+            int sum =0;
+            for(int j = 0; j<k;j++){
+                sum += arr[i+j];
+            }
             if (sum > result) {
                 result = sum;
             }
