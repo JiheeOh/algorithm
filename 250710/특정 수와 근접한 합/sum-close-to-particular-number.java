@@ -14,7 +14,7 @@ public class Main {
         int s = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] arr = new int[6];
+        int[] arr = new int[n];
         int totalSum = 0;
         for (int i = 0; i < n; i++) {
             int data = Integer.parseInt(st.nextToken());
