@@ -1,6 +1,3 @@
-
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,14 +21,13 @@ public class Main {
 
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length-1; i++) {
-            for (int j = i; j < arr.length - i ; j++) {
-                if ( arr[i] == null || arr[j] ==null){
+            for (int j = 0; j < arr.length - i ; j++) {
+                if ( arr[i] == null || arr[i+j] ==null){
                 continue;
                 }
-                if (isAllG(i, j) || isAllH(i, j) || isMatch(i, j)) {
-                    int length = j - i;
-                    if (length > max) {
-                        max = length;
+                if (isAllG(i, i+j) || isAllH(i, i+j) || isMatch(i, i+j)) {
+                    if (j > max) {
+                        max = j;
                     }
                 }
             }
@@ -67,6 +63,7 @@ public class Main {
             }
             if (!arr[i].equals("H")) {
                 result = false;
+                break;
             }
         }
         return result;
@@ -80,6 +77,7 @@ public class Main {
             }
             if (!arr[i].equals("G")) {
                 result = false;
+                break;
             }
         }
         return result;
