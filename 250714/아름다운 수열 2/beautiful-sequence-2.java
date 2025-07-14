@@ -15,7 +15,7 @@ public class Main {
         int m = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[n];
-        HashSet<Integer> bSet = new HashSet<>();
+        List<Integer> bList = new ArrayList<>();
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -24,22 +24,19 @@ public class Main {
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < m; i++) {
-            bSet.add(Integer.parseInt(st.nextToken()));
+            bList.add(Integer.parseInt(st.nextToken()));
         }
 
 
         // 데이터 찾기
         int count =0;
         for (int i = 0; i < n-m+1; i++) {
-            boolean includeAll = true;
+            HashSet<Integer> compareData = new HashSet<>();
             for(int j = 0; j< m;j++){
-                if(!bSet.contains(arr[i+j])){
-                    includeAll = false;
-                }
-
-
+                compareData.add(arr[i+j]);
             }
-            if(includeAll){
+
+            if(compareData.containsAll(bList)){
                 count++;
             }
 
