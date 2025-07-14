@@ -1,3 +1,6 @@
+
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +18,7 @@ public class Main {
         int m = Integer.parseInt(st.nextToken());
 
         int[] arr = new int[n];
-        List<Integer> bList = new ArrayList<>();
+        int[] bArr = new int[m];
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
@@ -24,22 +27,31 @@ public class Main {
 
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < m; i++) {
-            bList.add(Integer.parseInt(st.nextToken()));
+            bArr[i] = Integer.parseInt(st.nextToken());
         }
+        Arrays.sort(bArr);
 
 
         // 데이터 찾기
         int count =0;
         for (int i = 0; i < n-m+1; i++) {
-            HashSet<Integer> compareData = new HashSet<>();
+            int[] tmp = new int[m];
             for(int j = 0; j< m;j++){
-                compareData.add(arr[i+j]);
+                tmp[j]=arr[i+j];
             }
 
-            if(compareData.containsAll(bList)){
+            Arrays.sort(tmp);
+
+            boolean issame = true;
+            for(int k = 0; k < m; k++)
+                if(tmp[k] != bArr[k]) {
+                    issame = false;
+                    break;
+                }
+
+            if(issame){
                 count++;
             }
-
 
         }
         System.out.println(count);
