@@ -1,3 +1,4 @@
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,14 +21,14 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             int data = Integer.parseInt(st.nextToken());
             int status = Integer.parseInt(st.nextToken());
-            arr[status] = data;
+            arr[status] = arr[status]+data;
         }
 
         int max = Integer.MIN_VALUE;
-        for (int i = 1; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             int start = i - k;
-            if (start < 1) {
-                start = 1;
+            if (start < 0) {
+                start = 0;
             }
             int end = i + k;
             if (end > 100) {
