@@ -31,9 +31,18 @@ public class Main {
         // 데이터 찾기
         int count =0;
         for (int i = 0; i < n-m+1; i++) {
-            if(bSet.containsAll(Arrays.asList(arr[i],arr[i+1],arr[i+2]))){
+            boolean includeAll = true;
+            for(int j = 0; j< m;j++){
+                if(!bSet.contains(arr[i+j])){
+                    includeAll = false;
+                }
+
+
+            }
+            if(includeAll){
                 count++;
             }
+
 
         }
         System.out.println(count);
