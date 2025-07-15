@@ -1,3 +1,6 @@
+
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,8 +17,8 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
-        int t = Integer.parseInt(st.nextToken());
         int h = Integer.parseInt(st.nextToken());
+        int t = Integer.parseInt(st.nextToken());
 
         arr = new int[n];
         st = new StringTokenizer(br.readLine());
