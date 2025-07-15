@@ -1,5 +1,6 @@
 
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,7 +15,7 @@ public class Main {
         // 데이터 입력
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        arr = new int[n];
+        arr = new int[3];
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         for(int i =0; i<3;i++){
