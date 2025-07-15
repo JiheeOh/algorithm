@@ -63,6 +63,14 @@ public class Main {
             if(compareData == n){
                 result =true;
             }
+        }else if(arrData ==n-1){
+            if(compareData ==1){
+                result = true;
+            }
+        } else if(arrData ==n){
+            if(compareData ==1 || compareData ==2){
+                result = true;
+            }
         }
         return result;
 
