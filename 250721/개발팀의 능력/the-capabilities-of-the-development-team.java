@@ -31,7 +31,7 @@ public class Main {
                         }
                         int sum2 = arr[k] + arr[q];
                         int sum3 = Math.abs(totalSum - (sum1 + sum2));
-                        if( sum1 == sum2 && sum2==sum3){
+                        if( sum1 == sum2 || sum2==sum3 || sum1 ==sum3){
                         }else {
                             int[] numbers = {sum1, sum2, sum3};
                             int maxSum = Arrays.stream(numbers).max().getAsInt();
