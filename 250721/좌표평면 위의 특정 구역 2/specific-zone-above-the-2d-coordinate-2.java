@@ -25,8 +25,8 @@ public class Main {
             List<Integer> xCollect = new ArrayList<>();
             List<Integer> yCollect = new ArrayList<>();
             for (int j = 0; j < n - 1; j++) {
-                xCollect.add(x[j]);
-                yCollect.add(y[j]);
+                xCollect.add(x[i+j]);
+                yCollect.add(y[i+j]);
 
             }
             int width = (Collections.max(xCollect)-Collections.min(xCollect)) * (Collections.max(yCollect)-Collections.min(yCollect));
