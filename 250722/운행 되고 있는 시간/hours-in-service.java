@@ -23,8 +23,7 @@ public class Main {
             end[i] = Integer.parseInt(st.nextToken());
         }
 
-        int cnt = Integer.MAX_VALUE;
-        int result = 0;
+        int result = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
             int[] work = new int[2001];
             // 일한 시간 입력
@@ -32,26 +31,17 @@ public class Main {
                 if (i == j) {
                     continue;
                 }
-                for(int k =start[j]; k<end[j];k++){
+                for (int k = start[j]; k < end[j]; k++) {
                     work[k]++;
                 }
             }
             // 최대로 겹치는 수 구하기
-            int duplicateCnt = Integer.MIN_VALUE;
-            for(int j = 0 ; j< 2001; j++ ){
-                duplicateCnt = Math.max(duplicateCnt,work[j]);
-            }
-            // 최대로 겹치는 수가 제일 적은 걸 구하기
-            if(cnt > duplicateCnt){
-                cnt = duplicateCnt;
-                result = 0;
-                for(int j = 0 ; j< 2001; j++ ){
-                    if(work[j] != 0){
-                        result ++;
-                    }
-                }
+            int time = 0;
+            for (int j = 0; j < 2001; j++) {
+                if (work[j] > 0) time++;
             }
 
+            result = Math.max(result, time);
 
         }
 
