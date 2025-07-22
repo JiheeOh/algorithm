@@ -27,22 +27,20 @@ public class Main {
         for (int i = 0; i < n - 1; i++) {
             boolean duplicate = false;
             for (int j = i + 1; j < n; j++) {
-                // 겹치는 선분
-                if (x1[i] < x1[j] && x1[j] < x2[i] && x2[i] < x2[j]) {
-                    cnt++;
+                // 안겹칠때
+                if (x1[i] <= x1[j] && x2[i] <= x2[j] && x1[j] < x2[j]) {
+                } else if (x1[j] >= x1[i] && x2[j] >= x2[i] && x2[i] > x1[i]) {
+                } else if (x1[j] <= x1[i] && x2[j] <= x2[i] && x1[i] < x2[i]) {
+                } else if (x1[i] >= x1[j] && x2[i] >= x2[j] && x2[j] > x1[j]) {
+                } else { //겹칠때
                     duplicate = true;
-                }
-                if (duplicate) {
-                    cnt++;
+
                 }
             }
-
+            if (!duplicate) {
+                cnt++;
+            }
         }
-
-        System.out.println(n - cnt);
-
+        System.out.println(cnt);
     }
-
-
 }
-
