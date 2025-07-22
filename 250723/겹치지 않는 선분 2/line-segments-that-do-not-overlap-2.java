@@ -1,0 +1,48 @@
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    private static int[] x1;
+    private static int[] x2;
+
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+
+        x1 = new int[n];
+        x2 = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            x1[i] = Integer.parseInt(st.nextToken());
+            x2[i] = Integer.parseInt(st.nextToken());
+        }
+
+        int cnt = 0;
+        for (int i = 0; i < n - 1; i++) {
+            boolean duplicate = false;
+            for (int j = i + 1; j < n; j++) {
+                // 겹치는 선분
+                if (x1[i] < x1[j] && x1[j] < x2[i] && x2[i] < x2[j]) {
+                    cnt++;
+                    duplicate = true;
+                }
+                if (duplicate) {
+                    cnt++;
+                }
+            }
+
+        }
+
+        System.out.println(n - cnt);
+
+    }
+
+
+}
+
