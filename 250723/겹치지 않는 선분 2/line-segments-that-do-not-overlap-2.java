@@ -24,9 +24,12 @@ public class Main {
         }
 
         int cnt = 0;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n; i++) {
             boolean duplicate = false;
-            for (int j = i + 1; j < n; j++) {
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    continue;
+                }
                 // 안겹칠때
                 if (x1[i] <= x1[j] && x2[i] <= x2[j] && x1[j] < x2[j]) {
                 } else if (x1[j] >= x1[i] && x2[j] >= x2[i] && x2[i] > x1[i]) {
@@ -34,7 +37,6 @@ public class Main {
                 } else if (x1[i] >= x1[j] && x2[i] >= x2[j] && x2[j] > x1[j]) {
                 } else { //겹칠때
                     duplicate = true;
-
                 }
             }
             if (!duplicate) {
