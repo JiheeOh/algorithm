@@ -50,7 +50,7 @@ public class Main {
                 int second = cheeseEatRecord[j][2];
 
                 if (cheese == i) {
-                    if (sick[person] == 0) {
+                    if (sick[person] == 0 || sick[person] > second) {
                         sick[person] = second + 1;
                     }
                 }
