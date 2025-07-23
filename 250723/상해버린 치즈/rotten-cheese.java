@@ -26,7 +26,7 @@ public class Main {
             cheeseEat[0] = Integer.parseInt(st.nextToken());
             cheeseEat[1] = Integer.parseInt(st.nextToken());
             cheeseEat[2] = Integer.parseInt(st.nextToken());
-            cheeseEatRecord[j] =cheeseEat;
+            cheeseEatRecord[j] = cheeseEat;
         }
 
         // 아픈 기록
@@ -34,8 +34,8 @@ public class Main {
         for (int j = 0; j < sickCnt; j++) {
             st = new StringTokenizer(br.readLine());
             int[] peoplesick = new int[2];
-            peoplesick[0] =Integer.parseInt(st.nextToken());
-            peoplesick[1]= Integer.parseInt(st.nextToken());
+            peoplesick[0] = Integer.parseInt(st.nextToken());
+            peoplesick[1] = Integer.parseInt(st.nextToken());
             sickRecord[j] = peoplesick;
         }
 
@@ -50,7 +50,9 @@ public class Main {
                 int second = cheeseEatRecord[j][2];
 
                 if (cheese == i) {
-                    sick[person] = second + 1;
+                    if (sick[person] == 0) {
+                        sick[person] = second + 1;
+                    }
                 }
             }
 
@@ -76,7 +78,7 @@ public class Main {
                 }
             }
 
-            result = Math.max(mediCnt,result);
+            result = Math.max(mediCnt, result);
         }
         System.out.println(result);
 
