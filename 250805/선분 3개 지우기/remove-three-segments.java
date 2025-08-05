@@ -25,7 +25,7 @@ public class Main {
             for (int j = i + 1; j < n - 1; j++) {
                 for (int p = j + 1; p < n; p++) {
                     boolean unique = true;
-                    int [] arr = new int[100];
+                    int [] arr = new int[100+1];
                     for (int q = 0; q < n; q++) { // 3개 제외하고 남은 선분들
                         if(q==i || q == j || q == p ){
                             continue;
