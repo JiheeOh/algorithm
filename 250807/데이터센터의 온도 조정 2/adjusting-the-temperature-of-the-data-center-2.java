@@ -24,7 +24,7 @@ public class Main {
 
         Ta = new int[n];
         Tb = new int[n];
-        
+
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             Ta[i] = Integer.parseInt(st.nextToken());
@@ -35,7 +35,7 @@ public class Main {
         int max = Arrays.stream(Tb).max().getAsInt();
 
         int result = Integer.MIN_VALUE;
-        for (int i = min; i < max + 1; i++) {
+        for (int i = min-1; i < max + 1; i++) {
             int output = getOutput(i);
             result = Math.max(result, output);
         }
