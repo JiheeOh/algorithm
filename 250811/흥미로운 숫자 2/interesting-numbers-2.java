@@ -1,3 +1,6 @@
+
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,23 +20,31 @@ public class Main {
 
         int result = 0;
         for (int i = x; i < y + 1; i++) {
-           String[] tmp = Integer.toString(i).split("");
-           int[] arr= new int[10];
-           int cnt = 0;
-           for(int j = 0 ; j<tmp.length;j++){
-               if(arr[Integer.parseInt(tmp[j])]==0){
-                   arr[Integer.parseInt(tmp[j])] =1;
-               }
-           }
+            String[] tmp = Integer.toString(i).split("");
+            int[] arr = new int[10];
 
-           for( int k = 0 ; k <arr.length;k++){
-               if(arr[k] !=0){
-                   cnt++;
-               }
-           }
-           if(cnt ==2){
-               result++;
-           }
+            for (int j = 0; j < tmp.length; j++) {
+            
+                arr[Integer.parseInt(tmp[j])] += 1;
+
+            }
+
+            int diffCnt = 0;
+            boolean isAnswer = false;
+            for (int k = 0; k < arr.length; k++) {
+
+                if (arr[k] != 0) {
+                    diffCnt++;
+                    if (arr[k] == 1) {
+                        isAnswer = true;
+                    }
+                }
+
+
+            }
+            if (diffCnt == 2 && isAnswer) {
+                result++;
+            }
 
 
         }
