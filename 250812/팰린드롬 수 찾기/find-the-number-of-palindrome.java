@@ -1,6 +1,3 @@
-
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,21 +15,16 @@ public class Main {
 
         int result = 0;
         for (int i = start; i < end + 1; i++) {
-            String[] tmp = Integer.toString(i).split("");
-            Stack<String> stack = new Stack<>();
-            stack.addAll(Arrays.asList(tmp));
-
-            boolean isAnswer = true;
-            for (int j = 0; j < tmp.length; j++) {
-                if (!stack.pop().equals(tmp[j])) {
-                    isAnswer = false;
-                    break;
-                }
+            int tmp = i ;
+            int answer = 0;
+            while(tmp>0){
+                int dan = String.valueOf(tmp).length()-1;
+                answer += (int) ((tmp%10)*Math.pow(10,dan));
+                tmp = tmp/10;
             }
-            if (isAnswer) {
+            if (answer == i){
                 result++;
             }
-
         }
 
 
