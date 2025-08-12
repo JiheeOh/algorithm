@@ -30,8 +30,8 @@ public class Main {
             for (int j = 0; j < data.length; j++) {
                if(data[j] >i && !show){
                    show=true;
-                   count++;
-               }else if(data[j] == i){
+                   count++;<
+               }else if(data[j] <= i){
                    show = false;
                }
             }
