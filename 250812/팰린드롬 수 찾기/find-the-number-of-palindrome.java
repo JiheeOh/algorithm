@@ -22,11 +22,14 @@ public class Main {
             Stack<String> stack = new Stack<>();
             stack.addAll(Arrays.asList(tmp));
 
-            List<String> popList = new ArrayList<>();
-            while (!stack.isEmpty()) {
-                popList.add(stack.pop());
+            boolean isAnswer = true;
+            for (int j = 0; j < tmp.length; j++) {
+                if (!stack.pop().equals(tmp[j])) {
+                    isAnswer = false;
+                    break;
+                }
             }
-            if(popList.equals(Arrays.asList(tmp))){
+            if (isAnswer) {
                 result++;
             }
 
