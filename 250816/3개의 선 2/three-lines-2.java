@@ -10,8 +10,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(br.readLine());
-        int[] x = new int[6];
-        int[] y = new int[6];
+        int[] x = new int[n];
+        int[] y = new int[n];
 
         int maxX = 0;
         int maxY = 0;
