@@ -30,7 +30,7 @@ public class Main {
                 seatTmp.add(j);
                 Collections.sort(seatTmp);
                 int distance = Integer.MAX_VALUE;
-                for (int k = 0; k < seatTmp.size()-2; k++) {
+                for (int k = 0; k < seatTmp.size()-1; k++) {
                     int tmp = seatTmp.get(k + 1) - seatTmp.get(k);
                     distance = Math.min(distance, tmp);
                 }
