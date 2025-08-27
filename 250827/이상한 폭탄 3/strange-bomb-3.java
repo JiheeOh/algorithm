@@ -18,7 +18,7 @@ public class Main {
         }
 
         int bangMax = 0;
-        int bombNm = -1;
+        int bombNm = 0;
         for (int i = 0; i < n - 1; i++) {
             int bangCnt = 0;
             for (int j = 1; j < k + 1; j++) {
