@@ -27,7 +27,7 @@ public class Main {
             answerArr.add(i);
             for (int j = 1; j < n; j++) {
                 int tmp = data[j - 1] - answerArr.get(answerArr.size() - 1);
-                if (tmp == answerArr.get(answerArr.size() - 1)) {
+                if (answerArr.contains(tmp) || tmp ==0) {
                     break;
                 } else {
                     answerArr.add(tmp);
