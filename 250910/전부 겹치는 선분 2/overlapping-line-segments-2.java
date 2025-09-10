@@ -19,8 +19,8 @@ public class Main {
 
         String result = "No";
         for (int i = 0; i < n; i++) {
-            int maxY = Integer.MIN_VALUE;
-            int minX = Integer.MAX_VALUE;
+            int minY = Integer.MAX_VALUE;
+            int maxX = Integer.MIN_VALUE;
 
             int minIndex = 0;
             int maxIndex = 0;
@@ -29,14 +29,14 @@ public class Main {
                 if (i == j) {
                     continue;
                 }
-                if (x[j] < minX) {
-                    minX = x[j];
-                    minIndex = j;
+                if (x[j] > maxX) {
+                    maxX = x[j];
+                    maxIndex = j;
                 }
 
-                if (y[j] > maxY) {
-                    maxY = y[j];
-                    maxIndex = j;
+                if (y[j] < minY) {
+                    minY = y[j];
+                    minIndex = j;
                 }
             }
 
