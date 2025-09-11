@@ -28,6 +28,7 @@ public class Main {
             notReadList[i] =notRead;
             if (i == p - 1 && notRead == 0) {
                 people = new ArrayList<>();
+                break;
             }
             data[i] = person;
             if (i >= p - 1) {
