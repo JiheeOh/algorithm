@@ -1,9 +1,9 @@
+package codingTest.math;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
 
 public class Main {
 
@@ -14,10 +14,10 @@ public class Main {
 
         int result = Integer.MAX_VALUE;
         for(int i= 1; i<distance;i++){
-            int fast = 0;
+            int fast = 1;
             int go = 0;
             int time = 0;
-            while(go <= 9){
+            while(go <= distance -1){
                 if(time < i ){
                     fast++;
                 }else{
