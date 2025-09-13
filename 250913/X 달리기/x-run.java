@@ -9,29 +9,32 @@ public class Main {
 
         int distance = Integer.parseInt(br.readLine());
 
-        int result = Integer.MAX_VALUE;
-        for(int i= 1; i<distance;i++){
-            int fast = 1;
-            int go = 0;
-            int time = 0;
-            while(go <= distance -1){
-                if(time < i ){
-                    fast++;
-                }else{
-                    if(fast>1){
-                        fast--;
-                    }
-                }
-                go+= fast;
-                time++;
-            }
-            if (fast == 1){
-                result = Math.min(result,time);
+        int status = 0 ;
+        int speed = 1;
+        int time = 0 ;
+        while(status < distance){
+            status+= speed;
+            if(checkSpeed(speed+1,distance-status)){
+                speed++;
+            }else if(checkSpeed(speed,distance-status)){
             }else{
-                break;
+                speed --;
             }
+            time ++;
         }
-        System.out.println(result);
+        System.out.println(time);
+    }
+
+    private static boolean checkSpeed(int speed, int remainDistance) {
+        int sum = 0 ;
+        for(int i =1; i<=speed;i++){
+            sum+= i;
+        }
+        if(sum <= remainDistance){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
