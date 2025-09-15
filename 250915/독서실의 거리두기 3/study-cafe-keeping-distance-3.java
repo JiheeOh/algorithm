@@ -14,19 +14,28 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
 
         String[] arr = br.readLine().split("");
-        List<Integer> interval = new ArrayList<>();
+        List<Integer> seat = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].equals("1")) {
-                interval.add(i);
+                seat.add(i);
             }
         }
 
         int tmp = Integer.MIN_VALUE;
-        for (int i = 0; i < interval.size()-1; i++) {
-            tmp = Math.max(tmp,interval.get(i+1)-interval.get(i));
+        for (int i = 0; i < seat.size() - 1; i++) {
+            int interval = seat.get(i + 1) - seat.get(i);
+            if (interval == 1) {
+                tmp = 1;
+                break;
+            }
+            tmp = Math.max(tmp, interval);
         }
 
-        System.out.println(tmp/2);
+        if (tmp == 1) {
+            System.out.println(tmp);
+        } else {
+            System.out.println(tmp / 2);
+        }
 
 
     }
