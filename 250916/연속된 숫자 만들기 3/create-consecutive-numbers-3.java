@@ -1,3 +1,5 @@
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,15 +24,13 @@ public class Main {
             System.exit(0);
         }
 
-        int i = 2;
-        while (true) {
-            if (Math.abs(b - a) == i || Math.abs(c - b) == i) {
-                System.out.println(i - 1);
-                break;
-            } else {
-                i++;
-            }
-        }
+
+        int x =Math.abs(b - a);
+        int y = Math.abs(c - b);
+
+        int max = Math.max(x,y);
+
+        System.out.println(max-1);
 
 
     }
