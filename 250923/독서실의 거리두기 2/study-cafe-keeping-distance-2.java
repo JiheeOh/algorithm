@@ -27,7 +27,7 @@ public class Main {
                     cnt =0;
                 }
                 startPoint = true;
-            } else {
+            } else if(startPoint){
                 cnt++;
             }
         }
