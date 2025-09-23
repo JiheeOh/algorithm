@@ -18,7 +18,7 @@ public class Main {
             if (data[i].equals("1")) {
                 if (startPoint) {
                     if(cnt ==0){
-                        System.out.println(0);
+                        System.out.println(1);
                         System.exit(0);
                     }
                     cnt++;
