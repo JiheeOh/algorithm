@@ -11,8 +11,6 @@ public class Main {
         int n = Integer.parseInt(br.readLine());
         String[] data = br.readLine().split("");
 
-
-
         List<Integer> distance = new ArrayList<>();
         int cnt = 0;
         boolean startPoint = false;
@@ -60,8 +58,9 @@ public class Main {
             }
         }
 
+        distance.add(maxDistance);
 
-        System.out.println(maxDistance);
+        System.out.println(Collections.min(distance));
 
     }
 }
