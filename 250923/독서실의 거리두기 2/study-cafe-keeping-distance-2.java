@@ -14,6 +14,7 @@ public class Main {
         List<Integer> distance = new ArrayList<>();
         int cnt = 0;
         boolean startPoint = false;
+        int maxDistance = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
             if (data[i].equals("1")) {
                 if (startPoint) {
@@ -30,7 +31,10 @@ public class Main {
                 cnt++;
             }
         }
-        int maxDistance = Collections.max(distance)/2;
+        if(!distance.isEmpty()){
+            maxDistance = Collections.max(distance)/2;;
+        }
+
 
         // 맨앞 자리가 비어있을 경우
         if (data[0].equals("0")) {
