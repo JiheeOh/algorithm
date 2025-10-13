@@ -22,18 +22,9 @@ public class Main {
 
         int answerValue = -1;
         for (int i = 1; i < n; i++) {
-            if (i < n-1 && sortData[i] != sortData[i - 1] && sortData[i] != sortData[i + 1]) {
+            if (sortData[i] != sortData[i - 1]) {
                 answerValue = sortData[i];
                 break;
-            } else if (i ==n-1 && sortData[i] != sortData[i - 1]) {
-                answerValue = sortData[i];
-                break;
-            }
-        }
-
-        if (n == 2) {
-            if (sortData[1] != sortData[0]) {
-                answerValue = sortData[1];
             }
         }
 
@@ -42,13 +33,17 @@ public class Main {
             System.exit(0);
         }
 
+        boolean findAnswer = false;
+        int answer = -1;
         for (int i = 0; i < n; i++) {
-            if (data[i] == answerValue) {
-                System.out.println(i + 1);
-                break;
+            if (data[i] == answerValue && !findAnswer) {
+                answer = i + 1;
+                findAnswer = true;
+            } else if (data[i] == answerValue && findAnswer) {
+                answer = -1;
             }
+
         }
-
-
+        System.out.println(answer);
     }
 }
