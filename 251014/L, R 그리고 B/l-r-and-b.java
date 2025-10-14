@@ -25,7 +25,7 @@ public class Main {
             }
         }
 
-        System.out.println(Math.abs(L[0]-B[0]) + Math.abs(L[1]-B[1]-1));
+        System.out.println(Math.abs(L[0]-B[0]) + Math.abs(L[1]-B[1])-1);
 
 
     }
