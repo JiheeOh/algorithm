@@ -29,7 +29,10 @@ public class Main {
             }
         }
         int result = Math.abs(L[0] - B[0]) + Math.abs(L[1] - B[1]) - 1;
-        if (L[0] == B[0] && B[0] == R[0] || L[1] == B[1] && B[1] == R[1]) {
+        if (L[0] == B[0] && B[0] == R[0] && R[1] > L[1] && R[1] < B[1]) {
+
+            result += 2;
+        } else if (L[1] == B[1] && B[1] == R[1] && R[0] > L[0] && R[0] < B[0]) {
             result += 2;
         }
         System.out.println(result);
