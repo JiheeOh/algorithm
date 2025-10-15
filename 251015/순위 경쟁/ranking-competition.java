@@ -36,19 +36,19 @@ public class Main {
 
             // 최대 점수자 확인
             int maxScore = Integer.MIN_VALUE;
-            String maxIndex = "";
+            StringBuilder maxIndex = new StringBuilder();
             for (int j = 0; j < 3; j++) {
                 if (scoreArray[j] > maxScore) {
                     maxScore = scoreArray[j];
-                    maxIndex= Integer.toString(j);
-                }else if(scoreArray[j] == maxScore){
-                    maxIndex += maxIndex+ j;
+                    maxIndex = new StringBuilder(Integer.toString(j));
+                } else if (scoreArray[j] == maxScore) {
+                    maxIndex.append(j);
                 }
-                tmpWinners.append(maxIndex);
             }
+            tmpWinners.append(maxIndex);
 
             // 명예의 전당 비교
-            if(!tmpWinners.toString().equals(winners)){
+            if (!tmpWinners.toString().equals(winners)) {
                 winners = tmpWinners.toString();
                 cnt++;
             }
