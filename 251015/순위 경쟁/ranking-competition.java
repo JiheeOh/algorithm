@@ -42,10 +42,10 @@ public class Main {
                     maxScore = scoreArray[j];
                     maxIndex= Integer.toString(j);
                 }else if(scoreArray[j] == maxScore){
-                    tmpWinners.append(j);
+                    maxIndex += maxIndex+ j;
                 }
+                tmpWinners.append(maxIndex);
             }
-            tmpWinners.append(maxIndex);
 
             // 명예의 전당 비교
             if(!tmpWinners.toString().equals(winners)){
