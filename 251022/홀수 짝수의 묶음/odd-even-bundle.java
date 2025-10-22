@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
@@ -49,7 +47,7 @@ public class Main {
                     odd.pop();
                     cnt++;
                 }else{
-                    System.out.println(cnt-1);
+                    System.out.println(cnt);
                     System.exit(0);
                 }
             }
