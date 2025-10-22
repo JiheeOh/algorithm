@@ -32,8 +32,14 @@ public class Main {
                 }
             }
             if (!isWifi && data[i] != 0) {
-                wifi[i+m] = 1;
-                cnt++;
+                if(i+m >=n){
+                    wifi[n-1] = 1;
+                    cnt++;
+                }else{
+                    wifi[i+m] = 1;
+                    cnt++;
+                }
+
             }
         }
 
