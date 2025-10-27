@@ -15,16 +15,26 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         List<Integer> arr = new ArrayList<>();
 
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
-            arr.add(Integer.parseInt(st.nextToken()));
+            int tmp = Integer.parseInt(st.nextToken());
+            arr.add(tmp);
+            min = Math.min(min,tmp);
+            max = Math.max(max,tmp);
         }
-        
+
 
         // 오름차순 정렬
         int cnt = 0;
         for (int i = 0; i < n; i++) {
             int first = arr.get(0);
             int end = arr.get(n - 1);
+
+            if( min == first && end == max){
+                break;
+                
+            }
 
             if (first < end ) {
                 arr.add(n - 1, first);
@@ -36,10 +46,10 @@ public class Main {
                 cnt++;
             }
 
-           
+
         }
 
-        System.out.println(cnt-1);
+        System.out.println(cnt);
     }
 
 }
