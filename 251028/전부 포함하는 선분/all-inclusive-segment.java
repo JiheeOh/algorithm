@@ -1,3 +1,5 @@
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,10 +20,22 @@ public class Main {
             back[i] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(front);
-        Arrays.sort(back);
+        int minLength = Integer.MAX_VALUE;
+        for(int i = 0 ; i< n ; i++){
+            int a = Integer.MAX_VALUE;
+            int b = Integer.MIN_VALUE;
 
-        int minLength = Math.min(back[n-1]-front[1],back[n-2]-front[0]);
+            for(int j = 0; j <n ; j++){
+                if(i == j){
+                    continue;
+                }else{
+                    a = Math.min(front[j],a);
+                    b = Math.max(back[j],b);
+                }
+            }
+
+            minLength = Math.min(b-a,minLength);
+        }
         System.out.println(minLength);
     }
 }
