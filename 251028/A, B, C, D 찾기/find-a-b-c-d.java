@@ -25,6 +25,7 @@ public class Main {
             if(arr[i] <= a+b && arr[14]-(a+b+arr[i]) >= arr[i]){
                 c = arr[i];
                 d = arr[14]-(a+b+c);
+                break;
             }
         }
 
