@@ -13,14 +13,14 @@ public class Main {
         int commandCnt = sc.nextInt();
         String s = sc.next();
         sc.nextLine();
-        
-        LinkedList<String> breadList = new LinkedList<>();
-        String[] data = s.split("");
-        for (int i = 0; i < breadCnt; i++) {
-            breadList.add(data[i]);
+
+        LinkedList<Character> breadList = new LinkedList<>();
+        for (char c : s.toCharArray()) {
+            breadList.add(c);
         }
 
-        ListIterator<String> iterator = breadList.listIterator(breadCnt);
+
+        ListIterator<Character> iterator = breadList.listIterator(breadCnt);
         for (int i = 0; i < commandCnt; i++) {
             StringTokenizer commandData = new StringTokenizer(sc.nextLine());
             String command = commandData.nextToken();
@@ -32,7 +32,7 @@ public class Main {
                     }
                     break;
                 case "P":
-                    String breadData = commandData.nextToken();
+                    char breadData = commandData.nextToken().charAt(0);
                     iterator.add(breadData);
                     break;
                 case "R":
