@@ -1,5 +1,4 @@
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -48,8 +47,9 @@ public class Main {
             }
         }
 
-        for(int i = 0; i <breadList.size();i++){
-            System.out.print(breadList.get(i));
+        iterator = breadList.listIterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
         }
     }
 }
