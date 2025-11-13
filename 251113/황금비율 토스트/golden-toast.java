@@ -15,32 +15,31 @@ public class Main {
         sc.nextLine();
 
         LinkedList<Character> breadList = new LinkedList<>();
-        for (char c : s.toCharArray()) {
-            breadList.add(c);
+        for(int i = 0; i < s.length(); i++){
+            breadList.add(s.charAt(i));
         }
 
 
         ListIterator<Character> iterator = breadList.listIterator(breadCnt);
         for (int i = 0; i < commandCnt; i++) {
-            StringTokenizer commandData = new StringTokenizer(sc.nextLine());
-            String command = commandData.nextToken();
+            char command = sc.next().charAt(0);
 
             switch (command){
-                case "L":
+                case 'L':
                     if(iterator.hasPrevious()){
                         iterator.previous();
                     }
                     break;
-                case "P":
-                    char breadData = commandData.nextToken().charAt(0);
+                case 'P':
+                    char breadData = sc.next().charAt(0);
                     iterator.add(breadData);
                     break;
-                case "R":
+                case 'R':
                     if(iterator.hasNext()){
                         iterator.next();
                     }
                     break;
-                case "D":
+                case 'D':
                     if(iterator.hasNext()){
                         iterator.next();
                         iterator.remove();
