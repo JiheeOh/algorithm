@@ -1,16 +1,14 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Main {
-    private static int n = 0;
+    private static int[] newArr;
 
     public static void main(String[] args) throws Exception {
 
         Scanner sc = new Scanner(System.in);
-         n = sc.nextInt();
+        int n = sc.nextInt();
         int[] arr = new int[n];
+        newArr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
@@ -34,7 +32,6 @@ public class Main {
         int i = low;
         int j = mid + 1;
 
-        int[] newArr = new int[n];
         while (i <= mid && j <= high) {
             if (arr[i] <= arr[j]) {
                 newArr[k] = arr[i];
