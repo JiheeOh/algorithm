@@ -20,7 +20,7 @@ public class Main {
                     
                 case ")":
                     if(stack.isEmpty()){
-                        System.out.println("NO");
+                        System.out.println("No");
                         System.exit(0);
                     }
                     stack.pop();
