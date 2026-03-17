@@ -27,34 +27,27 @@ public class Main {
 
         // 가로
         for (int i = 0; i < n; i++) {
-            List<Integer> tmp = new ArrayList<>();
             int duplicnt = 0;
-            for (int j = 0; j < n; j++) {
-                if (tmp.contains(arr[i][j])) {
+            for (int j = 0; j < n - 1; j++) {
+                if (arr[i][j + 1] == arr[i][j]) {
                     duplicnt++;
-                }else {
-                    tmp.add(arr[i][j]);
                 }
-
             }
-            if (duplicnt >= m-1) {
+            if (duplicnt >= m - 1) {
                 answer++;
             }
         }
 
         // 세로
-        for (int i = 0; i < n; i++) {
-            List<Integer> tmp = new ArrayList<>();
+        for (int i = 0; i < n ; i++) {
             int duplicnt = 0;
-            for (int j = 0; j < n; j++) {
-                if (tmp.contains(arr[i][j])) {
+            for (int j = 0; j < n-1; j++) {
+                if (arr[j][i] == arr[j + 1][i]) {
                     duplicnt++;
-                }else {
-                    tmp.add(arr[i][j]);
                 }
 
             }
-            if (duplicnt >= m-1) {
+            if (duplicnt >= m - 1) {
                 answer++;
             }
         }
