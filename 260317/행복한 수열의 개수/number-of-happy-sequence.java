@@ -24,6 +24,10 @@ public class Main {
         }
 
         int answer = 0;
+        if (m == 1) {
+            System.out.println(2 * n);
+            System.exit(0);
+        }
 
         // 가로
         for (int i = 0; i < n; i++) {
@@ -31,24 +35,31 @@ public class Main {
             for (int j = 0; j < n - 1; j++) {
                 if (arr[i][j + 1] == arr[i][j]) {
                     duplicnt++;
+                    if (duplicnt >= m - 1) {
+                        answer++;
+                        break;
+                    }
+                } else {
+                    duplicnt = 0;
                 }
+
             }
-            if (duplicnt >= m - 1) {
-                answer++;
-            }
+
         }
 
         // 세로
-        for (int i = 0; i < n ; i++) {
+        for (int i = 0; i < n; i++) {
             int duplicnt = 0;
-            for (int j = 0; j < n-1; j++) {
+            for (int j = 0; j < n - 1; j++) {
                 if (arr[j][i] == arr[j + 1][i]) {
                     duplicnt++;
+                    if (duplicnt >= m - 1) {
+                        answer++;
+                        break;
+                    }
+                } else {
+                    duplicnt = 0;
                 }
-
-            }
-            if (duplicnt >= m - 1) {
-                answer++;
             }
         }
 
